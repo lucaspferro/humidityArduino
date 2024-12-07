@@ -1,0 +1,19 @@
+#define RELAY_PIN D4
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(RELAY_PIN, OUTPUT);
+
+  digitalWrite(RELAY_PIN, LOW);
+  Serial.println("Sistema inicializado. Relé deve estar DESLIGADO.");
+}
+
+void loop() {
+  digitalWrite(RELAY_PIN, HIGH);
+  Serial.println("Tentando LIGAR o relé...");
+  delay(800);
+
+  digitalWrite(RELAY_PIN, LOW);
+  Serial.println("Tentando DESLIGAR o relé...");
+  delay(800);
+}
